@@ -1,8 +1,22 @@
-# React + Vite
+# data API frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Инструкция как запустить dev среду
+1. Установка зависимостей
+```
+npm install
+```
+2. Запуск dev-сервера
+```
+npm run dev
+```
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Инструкция сборки production версии
+1. Установка зависимостей
+```
+npm install
+```
+2. Сборка проекта
+```
+npm run build
+```
