@@ -12,8 +12,17 @@ import { useState } from "react";
 import { useTransform } from "../hooks/use-transform";
 
 export function TransformForm() {
-  const resources = useResources();
-  const models = useModels();
+  const {
+    resources,
+    isLoading: isLoadingResources,
+    error: errorResources,
+  } = useResources();
+
+  const {
+    models,
+    isLoading: isLoadingModels,
+    error: errorModels,
+  } = useModels();
 
   const [selectedIndexResource, setSelectedIndexResource] = useState();
   const [selectedIndexModel, setSelectedIndexModel] = useState();
@@ -40,6 +49,9 @@ export function TransformForm() {
           </CardHeader>
           <CardBody className="overflow-visible py-2">
             <Select
+              isInvalid={Boolean(errorResources)}
+              errorMessage={errorResources}
+              isLoading={isLoadingResources}
               selectedKeys={[selectedIndexResource]}
               aria-label="select-resource"
               placeholder="Название ресурса"
@@ -59,6 +71,9 @@ export function TransformForm() {
           </CardHeader>
           <CardBody className="overflow-visible py-2">
             <Select
+              isInvalid={Boolean(errorModels)}
+              errorMessage={errorModels}
+              isLoading={isLoadingModels}
               selectedKeys={[selectedIndexModel]}
               onChange={(event) => setSelectedIndexModel(event.target.value)}
               aria-label="select-model"
