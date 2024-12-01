@@ -16,9 +16,9 @@ export async function transformData(resource, model) {
   const response = await fetch(API_URL + "/transform", {
     method: "POST",
     body: JSON.stringify({
-        resource, 
-        model
-    })
+      resource,
+      model,
+    }),
   });
 
   return await response.json();

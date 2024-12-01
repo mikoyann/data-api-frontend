@@ -4,10 +4,19 @@
 
 :root {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; 
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
   width: 960px;
   margin: 0 auto;
+}
+
+@media (max-width: 960px) {
+  .container {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
 }
